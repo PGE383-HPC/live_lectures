@@ -1,4 +1,4 @@
-FROM johntfoster/pytrilinos:2d03ab1bb413
+FROM johntfoster/pytrilinos:56ebaee4d4a4
 
 ENV NB_USER default
 ENV NB_UID 1000
@@ -17,5 +17,8 @@ RUN chown -R ${NB_UID} ${CONDA_HOME}
 USER ${NB_USER}
 
 ENV PATH ${CONDA_HOME}/bin:${PATH}
-
-RUN pip install notebook
+RUN which pip
+RUN pip install --no-cache-dir notebook
+RUN pip install --no-cache-dir RISE
+RUN jupyter-nbextension install rise --py --sys-prefix
+RUN jupyter-nbextension enable rise --py --sys-prefix

@@ -1,4 +1,4 @@
-FROM:johntfoster/pytrilinos:2d03ab1bb413
+FROM johntfoster/pytrilinos:2d03ab1bb413
 
 ENV NB_USER hpc
 ENV NB_UID 1000

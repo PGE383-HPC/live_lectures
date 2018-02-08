@@ -1,9 +1,8 @@
 FROM johntfoster/pytrilinos:2d03ab1bb413
 
-ENV NB_USER hpc
+ENV NB_USER default
 ENV NB_UID 1000
 ENV HOME /home/${NB_USER}
-ENV PATH ${CONDA_HOME}/bin:${PATH}
 
 RUN adduser --disabled-password \
     --gecos "Default user" \
@@ -14,6 +13,9 @@ RUN adduser --disabled-password \
 COPY . ${HOME}
 USER root
 RUN chown -R ${NB_UID} ${HOME}
+RUN chown -R ${NB_UID} ${CONDA_HOME}
 USER ${NB_USER}
+
+ENV PATH ${CONDA_HOME}/bin:${PATH}
 
 RUN pip install notebook

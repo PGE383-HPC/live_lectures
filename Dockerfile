@@ -17,7 +17,7 @@ RUN chown -R ${NB_UID} ${CONDA_HOME}
 USER ${NB_USER}
 
 ENV PATH ${CONDA_HOME}/bin:${PATH}
-RUN which pip
+RUN echo `which pip`
 RUN pip install --no-cache-dir notebook
 RUN pip install --no-cache-dir RISE
 RUN jupyter-nbextension install rise --py --sys-prefix

@@ -7,3 +7,5 @@ RUN pip install --no-cache-dir notebook
 RUN pip install --no-cache-dir RISE
 RUN jupyter-nbextension install rise --py --sys-prefix
 RUN jupyter-nbextension enable rise --py --sys-prefix
+
+CMD jupyter notebook --ip 0.0.0.0

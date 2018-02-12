@@ -13,7 +13,7 @@ RUN mkdir ${HOME}/notebooks
 COPY *.ipynb ${HOME}/notebooks/
 COPY images ${HOME}/notebooks/images
 COPY rise.css ${HOME}/notebooks/
-RUN chown -R ${NB_USER} ${HOME}
+RUN chown -R ${NB_USER} ${HOME}/notebooks
 RUN rm miniconda.sh
 WORKDIR ${HOME}/notebooks
 USER ${NB_USER}

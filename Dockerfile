@@ -11,7 +11,7 @@ RUN jupyter-nbextension enable rise --py --sys-prefix
 USER root
 RUN mkdir ${HOME}/notebooks
 COPY *.ipynb ${HOME}/notebooks/
-COPY images ${HOME}/notebooks/
+COPY images ${HOME}/notebooks/images
 COPY rise.css ${HOME}/notebooks/
 RUN chown -R ${NB_USER} ${HOME}
 RUN rm miniconda.sh

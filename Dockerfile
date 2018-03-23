@@ -2,6 +2,7 @@ FROM johntfoster/pytrilinos:12700159ce36
 
 
 ENV PATH ${HOME}/miniconda/bin:${PATH}
+ENV CONDA_PREFIX ${CONDA_HOME}
 
 RUN pip install --no-cache-dir notebook
 RUN pip install --no-cache-dir RISE

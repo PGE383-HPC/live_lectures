@@ -4,6 +4,7 @@ FROM johntfoster/pytrilinos:12700159ce36
 ENV PATH ${HOME}/miniconda/bin:${PATH}
 ENV CONDA_PREFIX ${CONDA_HOME}
 
+RUN conda install mkl-include
 RUN pip install --no-cache-dir notebook
 RUN pip install --no-cache-dir RISE
 RUN pip install --no-cache-dir jupyter_contrib_nbextensions

@@ -1,4 +1,4 @@
-FROM johntfoster/pytrilinos:12700159ce36
+FROM johntfoster/pytrilinos:56e52900d7ea
 
 
 ENV PATH ${HOME}/miniconda/bin:${PATH}

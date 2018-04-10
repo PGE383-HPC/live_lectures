@@ -21,7 +21,7 @@ COPY *.pdf ${HOME}/notebooks/
 COPY images ${HOME}/notebooks/images
 COPY rise.css ${HOME}/notebooks/
 RUN chown -R ${NB_USER} ${HOME}/notebooks
-RUN rm miniconda.sh
+RUN rm ${HOME}/miniconda.sh
 WORKDIR ${HOME}/notebooks
 USER ${NB_USER}
 RUN jupyter trust ${HOME}/notebooks/*.ipynb
